@@ -1,0 +1,294 @@
+{
+  "personal": {
+    "name": "Krishnan CS",
+    "email": "kchathadi@gmail.com",
+    "phone": "+91 8380074960",
+    "linkedin": "linkedin.com/in/krishnancs/",
+    "github": "github.com/Krishnan-CS/",
+    "location": "India"
+  },
+  
+  "languages": [
+	  { "language": "English", "proficiency": "Professional" },
+	  { "language": "Tamil", "proficiency": "Native" },
+	  { "language": "Hindi", "proficiency": "Intermediate" },
+	  { "language": "French", "proficiency": "Intermediate" }
+	],
+	
+  "career": {
+  "target_roles": ["Data Science Manager", "AI Product Manager", "AI Solutions Architect", "GenAI Business Development Manager", "AI Strategy Consultant", "ML Engineering Manager"],
+  "pivot_context": "Transitioning from software engineering management to AI-driven strategy and business development",
+  "open_to_relocation": true
+  },
+
+  "summary_hints": [
+    "Software engineering manager with 15+ years delivering high-impact projects for clients such as Apple, Red Bull Racing, and Boeing",
+    "Pivoting into AI-driven strategy and business development",
+    "Blends advanced technical expertise in GenAI, machine learning, and MLOps with sharp business acumen",
+    "Translates complex domain needs into actionable AI projects",
+    "Committed to driving growth through strategic partnerships, client engagement, and identifying potential areas for AI intervention",
+    "Currently completing Advanced Management Program in Business Analytics at ISB and Post Graduate Program in Data Science at UT Austin"
+  ],
+
+  "skills": {
+    "genai_nlp": [
+      { "name": "LLMs", "level": "intermediate", "tags": ["llm", "genai", "nlp"] },
+      { "name": "RAG", "level": "intermediate", "tags": ["llm", "genai", "retrieval"] },
+      { "name": "Knowledge Graphs", "level": "intermediate", "tags": ["llm", "genai", "graph"] },
+      { "name": "Prompt Engineering", "level": "intermediate", "tags": ["llm", "genai"] },
+      { "name": "Vector Embeddings", "level": "intermediate", "tags": ["llm", "nlp", "genai"] },
+      { "name": "Hugging Face", "level": "intermediate", "tags": ["llm", "nlp", "deep-learning"] },
+      { "name": "LangChain", "level": "intermediate", "tags": ["llm", "genai", "rag"] }
+    ],
+    "ml_modeling": [
+      { "name": "Supervised Learning", "level": "advanced", "tags": ["ml", "modeling"] },
+      { "name": "Unsupervised Learning", "level": "advanced", "tags": ["ml", "modeling"] },
+      { "name": "Deep Learning", "level": "advanced", "tags": ["ml", "deep-learning"] },
+      { "name": "Time Series Forecasting", "level": "intermediate", "tags": ["ml", "forecasting", "data"] },
+      { "name": "Recommendation Systems", "level": "advanced", "tags": ["ml", "personalization"] },
+      { "name": "Image Segmentation", "level": "intermediate", "tags": ["computer-vision", "deep-learning"] },
+      { "name": "Object Detection", "level": "intermediate", "tags": ["computer-vision", "deep-learning"] },
+      { "name": "XGBoost", "level": "advanced", "tags": ["ml", "modeling"] },
+      { "name": "LightGBM", "level": "advanced", "tags": ["ml", "modeling"] },
+      { "name": "scikit-learn", "level": "advanced", "tags": ["ml", "python"] }
+    ],
+    "mlops_deployment": [
+      { "name": "MLflow", "level": "intermediate", "tags": ["mlops", "experiment-tracking"] },
+      { "name": "CI/CD Pipelines", "level": "intermediate", "tags": ["mlops", "devops"] },
+      { "name": "Drift Monitoring", "level": "intermediate", "tags": ["mlops", "model-monitoring"] },
+      { "name": "Model Registry", "level": "intermediate", "tags": ["mlops", "model-management"] },
+      { "name": "Cloud Deployment", "level": "intermediate", "tags": ["mlops", "cloud"] },
+      { "name": "Edge Deployment", "level": "intermediate", "tags": ["mlops", "deployment"] },
+      { "name": "CRISP-ML(Q)", "level": "intermediate", "tags": ["mlops", "methodology"] },
+      { "name": "DVC", "level": "intermediate", "tags": ["mlops", "data-versioning"] }
+    ],
+    "data_analytics": [
+      { "name": "Python", "level": "advanced", "tags": ["python", "ml", "data", "automation"] },
+      { "name": "Pandas", "level": "advanced", "tags": ["data", "python", "ml"] },
+      { "name": "SQL", "level": "intermediate", "tags": ["data", "analytics"] },
+      { "name": "Tableau", "level": "intermediate", "tags": ["analytics", "visualization"] },
+      { "name": "Exploratory Data Analysis (EDA)", "level": "advanced", "tags": ["data", "analytics"] },
+      { "name": "Feature Engineering", "level": "advanced", "tags": ["ml", "data"] },
+      { "name": "Data Storytelling", "level": "advanced", "tags": ["analytics", "communication"] }
+    ],
+    "business_strategy": [
+      { "name": "Product Roadmapping", "level": "advanced", "tags": ["product", "strategy", "business"] },
+      { "name": "AI Requirements Translation", "level": "advanced", "tags": ["business", "ai", "strategy"] },
+      { "name": "KPI Identification", "level": "advanced", "tags": ["business", "analytics", "strategy"] },
+      { "name": "Stakeholder Communication", "level": "advanced", "tags": ["business", "communication"] },
+      { "name": "Feasibility Studies", "level": "advanced", "tags": ["business", "strategy"] },
+      { "name": "Business Development", "level": "intermediate", "tags": ["business", "strategy", "sales"] }
+    ],
+    "engineering": [
+      { "name": "Python APIs & Libraries", "level": "advanced", "tags": ["python", "engineering", "automation"] },
+      { "name": "Flask", "level": "intermediate", "tags": ["python", "backend", "api"] },
+      { "name": "React.js", "level": "intermediate", "tags": ["frontend", "web"] },
+      { "name": "Neo4j", "level": "intermediate", "tags": ["graph", "database", "knowledge-graph"] },
+      { "name": "Siamese Networks", "level": "intermediate", "tags": ["deep-learning", "ml"] }
+    ],
+	"agentic_ai": [
+	  { "name": "Agentic Workflows", "level": "intermediate", "tags": ["genai", "agents", "llm"] },
+	  { "name": "CrewAI", "level": "beginner", "tags": ["agents", "multi-agent", "genai"] }
+	],
+
+	"dev_tools": [
+	  { "name": "Cursor", "level": "intermediate", "tags": ["vibe-coding", "ai-assisted-dev", "productivity"] },
+	  { "name": "Claude Code", "level": "intermediate", "tags": ["vibe-coding", "ai-assisted-dev", "productivity"] },
+	  { "name": "GitHub Copilot", "level": "intermediate", "tags": ["vibe-coding", "ai-assisted-dev"] },
+	  { "name": "Git", "level": "advanced", "tags": ["engineering", "version-control"] },
+	  { "name": "Docker", "level": "intermediate", "tags": ["mlops", "deployment", "devops"] }
+	],
+
+	"cloud_platforms": [
+	  { "name": "AWS (SageMaker, S3, EC2)", "level": "beginner", "tags": ["cloud", "mlops", "deployment"] },
+	  { "name": "Hugging Face Hub", "level": "intermediate", "tags": ["llm", "model-registry", "genai"] }
+	],
+    "soft_skills": [
+      "Cross-functional team leadership",
+      "End-to-end product delivery",
+      "Technical mentoring",
+      "Customer engagement",
+      "Problem definition"
+    ]
+  },
+
+  "work_experience": [
+    {
+      "company": "Dassault Systemes",
+      "title": "SIMULIA R&D Software Engineering Manager",
+      "start": "May 2014",
+      "end": "May 2024",
+      "location": "India",
+      "bullets": [
+        "Bolstered the 45+ year legacy of Abaqus/CAE as an industry-leading simulation software by pioneering features that integrate modern data science with traditional CAE",
+        "Orchestrated end-to-end product development lifecycles through coordination with global engineering teams to ensure on-time delivery, high product quality, and customer satisfaction",
+        "Translated complex data pipeline automation requirements to lead the development of a suite of Python libraries and APIs, reducing manual data handling by 100%",
+        "Engineered scalable high-performance algorithms to process millions of data points, transforming raw simulation outputs into precise, actionable engineering metrics",
+        "Won multiple awards for technical brilliance (individual contributor) and project delivery (team)",
+        "Mentored 10+ junior developers and managed 20+ monthly customer-request fixes"
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "Advanced Management Program in Business Analytics",
+      "institution": "Indian School of Business (ISB)",
+      "year": "2025 - 2026",
+      "honors": "In Progress"
+    },
+    {
+      "degree": "Post Graduate Program in Data Science & Business Analytics",
+      "institution": "UT Austin",
+      "year": "2024 - 2025",
+      "gpa": "4.06 / 4.33"
+    },
+    {
+      "degree": "M.S. Aerospace Engineering",
+      "institution": "Georgia Institute of Technology",
+      "year": "2009 - 2011",
+      "gpa": "3.41 / 4.0"
+    },
+    {
+      "degree": "B.E. Mechanical Engineering",
+      "institution": "PSG College of Technology",
+      "year": "2000 - 2005",
+      "gpa": "8.75 / 10"
+    }
+  ],
+
+  "certifications": [
+	  {
+		"name": "5-Day AI Agents Intensive Course",
+		"issuer": "Google / Kaggle",
+		"year": "2025"
+	  },
+	  {
+		"name": "5-Day Gen AI Intensive Course",
+		"issuer": "Google / Kaggle",
+		"year": "2025"
+	  }
+	  ],
+
+  "projects": [
+    {
+      "name": "Spot the Fake — Fraudulent Website Detection",
+      "year": "2025",
+      "tags": ["nlp", "deep-learning", "ml", "classification", "llm", "python", "flask", "react"],
+      "description": "Multi-stage classification system to detect fraudulent websites using metadata triage and AI-powered content analysis. 3rd place in National Level Hackathon.",
+      "highlights": [
+        "Achieved 0.9 recall with a hybrid model: fine-tuned Mistral-7B (LoRA) for HTML analysis, Siamese networks for UI similarity, and Random Forest classifier",
+        "Combined instant metadata flagging (WHOIS, SSL, URL heuristics) with in-depth LLM analysis for multi-stage detection",
+        "Designed interactive Flask + React.js dashboard highlighting risky webpage elements with LLM-generated tags (scam, phishing, clone)"
+      ],
+      "url": "https://github.com/Krishnan-CS/Spot_The_Fake"
+    },
+    {
+      "name": "Shopping Cart Recommendation System",
+      "year": "2025",
+      "tags": ["ml", "recommendation", "feature-engineering", "personalization", "kaggle", "python"],
+      "description": "Personalized recommendation engine to suggest frequently forgotten items in shopping carts. Kaggle Competition Winner — #1 out of 20 teams.",
+      "highlights": [
+        "Secured #1 ranking with a winning recall@5 score of 0.25 on the Kaggle benchmark dataset",
+        "Engineered item-centric signals (SKU co-occurrence, seasonality) and user-centric behaviors (temporal purchase history, segmentation)",
+        "Built for mobile platform customer experience improvement"
+      ],
+      "url": "https://github.com/Krishnan-CS/AMPBA/tree/main/Shopping_Cart_Recsys"
+    },
+    {
+      "name": "Bullet Train Passenger Experience Prediction",
+      "year": "2025",
+      "tags": ["ml", "classification", "xgboost", "feature-engineering", "supervised-learning"],
+      "description": "Supervised learning model to identify key parameters driving passenger travel experience on a bullet train. Hackathon winner.",
+      "highlights": [
+        "Won class-level hackathon with top classification accuracy of 95.7% among 40 participants",
+        "Built ensemble of XGBoost models with targeted feature engineering and LightGBM-based feature selection"
+      ],
+      "url": "https://github.com/Krishnan-CS/GL_DSBA/tree/main/Hackathon_Predict_Satisfaction"
+    },
+    {
+      "name": "End-to-End Stock Forecasting & MLOps Platform",
+      "year": "2025",
+      "tags": ["mlops", "forecasting", "time-series", "mlflow", "drift-monitoring", "ml", "python"],
+      "description": "Full MLOps-governed stock forecasting platform with experiment tracking, drift monitoring, and automated retraining.",
+      "highlights": [
+        "Defined product vision and success metrics aligning technical targets (MAPE <=10%, RMSE <=20%) with business goals for >=10% portfolio return improvement",
+        "Implemented comprehensive MLOps governance with MLflow for model registry and experiment tracking",
+        "Built drift monitoring system that triggers automated retraining when deviations exceed 10%; maintained data quality through outlier detection and cleaning"
+      ],
+      "url": "https://github.com/Krishnan-CS/Stock_Price_Predict"
+    },
+    {
+      "name": "Cosmetic Store Chatbot with Knowledge Graphs (Graph-RAG)",
+      "year": "2025",
+      "tags": ["llm", "genai", "rag", "knowledge-graph", "neo4j", "langchain", "nlp", "personalization"],
+      "description": "Domain-specific chatbot using Graph-RAG to deliver personalized cosmetic product recommendations with reduced hallucinations.",
+      "highlights": [
+        "Designed product ontology in Neo4j modeling relationships between products, categories, ingredients, and user profiles",
+        "Implemented Graph-RAG with LangChain for factually correct, context-aware answers; reduced LLM hallucinations",
+        "Enabled personalized recommendations based on user requirements, brand preferences, skin type, and allergen sensitivities"
+      ],
+      "url": null
+    },
+    {
+      "name": "Boeing — Data Pipelines for Engineering Workflows",
+      "year": "2020",
+      "tags": ["data-engineering", "python", "automation", "ml", "fea", "pipeline"],
+      "description": "Automated integration of siloed Finite Element Analysis (FEA) data into machine learning systems at Boeing.",
+      "highlights": [
+        "Reduced data extraction latency by ~90%, eliminating manual workflows",
+        "Enabled engineering teams to focus on high-value analysis by automating repetitive data organization"
+      ],
+	  "url": null
+    },
+    {
+      "name": "Red Bull Racing — High Performance Data Architecture",
+      "year": "2018",
+      "tags": ["data-engineering", "architecture", "performance", "analytics", "optimization"],
+      "description": "Architectural redesign of stress data storage and aggregation pipeline for Red Bull Racing F1 team.",
+      "highlights": [
+        "Achieved 10% reduction in output database file size by storing aggregated stress data instead of raw results",
+        "Drove ~25% efficiency improvement in downstream analytics by eliminating runtime aggregation overhead"
+      ],
+	  "url": null
+    },
+    {
+      "name": "Apple — Strategic Prioritization & Roadmap Management",
+      "year": "2019",
+      "tags": ["product", "strategy", "roadmap", "cross-functional", "business", "animation"],
+      "description": "Managed competing product priorities to deliver a business-critical animation engine for Apple.",
+      "highlights": [
+        "Reallocated engineering resources to deliver animation engine for Apple while preserving internal R&D goals",
+        "Achieved seamless delivery through cross-functional collaboration across QA, UX, and Documentation teams"
+      ],
+	  "url": null
+    },
+	{
+	  "name": "Agentic Resume Screener",
+	  "year": "2025",
+	  "tags": ["agents", "multi-agent", "crewai", "genai", "llm", "hr-tech", "python"],
+	  "description": "Multi-agent pipeline using CrewAI to automate resume screening and candidate shortlisting.",
+	  "highlights": [
+		"Parser Agent: Extracts structured data from resumes (PDF)",
+		"Matcher Agent: Aligns resume skills with job descriptions using MiniLM embeddings",
+		"Feedback Agent: Generates interpretability tags and match verdicts",
+		"RAG Enricher: Augments resume context using FAISS retrievers",
+		"CrewAI Orchestration: Coordinates agents for end-to-end screening",
+		"Achieved a match score similar to LinkedIn match details, thus providing me valuable feedback when on jobs where the match score was not shown"
+	  ],
+	  "url": "https://github.com/Krishnan-CS/Agentic_Resume_Screener"
+	}
+  ],
+
+  "chatbot_system_prompt": "You are a personal assistant for Krishnan CS. Answer questions about his experience, skills, projects, education, and career goals based only on the profile data provided. Be concise and professional. If someone asks about anything unrelated to Krishnan — such as general coding help, trivia, or other topics — politely decline and redirect the conversation back to questions about him.",
+
+  "other": {
+    "prior_companies": ["Genser Aerospace & IT Pvt Ltd", "Georgia Tech", "Cognizant Technology Solutions"],
+    "prior_roles": ["Design Engineer", "Research / Teaching Assistant", "Programmer Analyst"],
+    "achievements": [
+      "FIDE-rated chess player",
+      "Competitive sudoku and pencil puzzle solver",
+      "Multiple awards for technical brilliance and project delivery at Dassault Systemes"
+    ]
+  }
+}
