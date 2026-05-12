@@ -90,7 +90,7 @@ export default function Navbar() {
           <span className="font-medium leading-tight" style={{ fontSize: "15px", color: "var(--text-primary)" }}>
             Krishnan CS
           </span>
-          <span className="leading-tight" style={{ fontSize: "12px", color: "var(--text-muted)" }}>
+          <span className="leading-tight" style={{ fontSize: "12px", color: "var(--accent-primary)" }}>
             AI Strategy Consultant
           </span>
         </div>

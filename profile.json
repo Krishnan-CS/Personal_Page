@@ -22,6 +22,58 @@
   "open_to_relocation": true
   },
 
+  "profile_summary": [
+    "15+ years in software engineering and enterprise delivery",
+    "Georgia Tech and ISB alum",
+    "Formerly at Dassault Systèmes and Cognizant",
+    "Delivered for Apple, Boeing, Red Bull Racing, and ExxonMobil"
+  ],
+
+  "specialties": [
+    "Predictive AI systems",
+    "Forecasting & optimization",
+    "GenAI & RAG systems",
+    "Recommendation systems",
+    "Image & video analytics",
+    "AI strategy & roadmapping"
+  ],
+
+  "hero_section": {
+    "eyebrow": "AI STRATEGY CONSULTANT · CHENNAI, INDIA",
+    "headline": "Helping businesses deploy AI effectively, securely, and at scale",
+    "body": "Building forecasting systems, GenAI applications, intelligent search, and production-grade AI platforms for real-world business environments.",
+    "features": [
+      { "title": "Problem definition",   "subtext": "Translate ambiguous business needs into actionable AI roadmaps." },
+      { "title": "Production AI Delivery",  "subtext": "From experimentation and modeling to MLOps and deployment." },
+      { "title": "Decision Intelligence",  "subtext": "Forecasting, optimization, recommendations, and explainable AI systems." }
+    ],
+    "cta": {
+      "title": "See the full range of services",
+      "subtext": "Strategy consulting · ML development · GenAI systems · MLOps",
+      "button": "View services",
+      "href": "#services"
+    }
+  },
+
+  "business_problems": [
+    {
+      "title": "Forecasting and Trend Prediction",
+      "subtext": "How is the market evolving, and what will happen next?"
+    },
+    {
+      "title": "Intelligent search and document understanding",
+      "subtext": "How do we extract reliable insight from large document repositories?"
+    },
+    {
+      "title": "Recommendation and personalisation",
+      "subtext": "What products, actions, or content should be surfaced next?"
+    },
+    {
+      "title": "AI risk and explainability",
+      "subtext": "Can we trust this model's recommendations in high-stakes scenarios?"
+    }
+  ],
+
   "summary_hints": [
     "Software engineering manager with 15+ years delivering high-impact projects for clients such as Apple, Red Bull Racing, and Boeing",
     "Pivoting into AI-driven strategy and business development",

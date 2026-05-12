@@ -1,35 +1,47 @@
 import profile from "@/profile.json";
 
-export default function Hero() {
-  const { brands, signals } = profile.highlights;
-  const { availability, availability_note } = profile.freelance;
-  const education = profile.education;
+type HeroSection = {
+  eyebrow: string;
+  headline: string;
+  body: string;
+  features: { title: string; subtext: string }[];
+  cta: { title: string; subtext: string; button: string; href: string };
+};
 
-  const clientBrands    = brands.filter((b) => b.type === "client");
-  const employerBrands  = brands.filter((b) => b.type === "employer");
-  const educationBrands = brands.filter((b) => b.type === "education");
+export default function Hero() {
+  const { freelance, specialties, business_problems } = profile as
+    typeof profile & {
+      specialties: string[];
+      business_problems: { title: string; subtext: string }[];
+    };
+  const hero = (profile as unknown as { hero_section: HeroSection }).hero_section;
+  const educationItems = [
+    { label: "ISB - Business Analytics",       color: "#854F0B" },
+    { label: "UT Austin - Data Science",       color: "#185FA5" },
+    { label: "Georgia Tech - Aerospace Engineering", color: "#B8860B" },
+  ];
 
   const stats = [
     {
-      value: "15+",
-      label: "Years of end-to-end delivery",
       sub: "Experience",
+      value: "15+",
+      label: "years end-to-end delivery",
     },
     {
-      value: `${clientBrands.length}+`,
-      label: clientBrands.slice(0, 3).map((b) => b.name.split(" ")[0]).join(" · "),
       sub: "Enterprise Clients",
+      value: "10+",
+      label: "Apple · Boeing · Red Bull Racing",
     },
     {
-      value: signals.filter((s) => s.type === "competition").length.toString(),
-      label: "Kaggle #1 · 2 hackathons",
-      sub: "Competitions Won",
+      sub: "AI Projects Delivered",
+      value: "10+",
+      label: "Document Intelligence · Power Trading Forecasts · Shopping Cart Recommendations",
     },
     {
-      value: availability === "open" ? "Open" : "Unavailable",
-      label: availability_note,
       sub: "Availability",
-      dot: availability === "open",
+      value: freelance.availability === "open" ? "Open" : "Unavailable",
+      label: freelance.availability_note,
+      dot: freelance.availability === "open",
     },
   ];
 
@@ -39,162 +51,136 @@ export default function Hero() {
       className="min-h-screen flex flex-col pt-14"
       style={{ backgroundColor: "var(--bg-base)" }}
     >
-      {/* Two-column body */}
-      <div className="flex-1 grid grid-cols-1 lg:grid-cols-[320px_1fr]">
+      <div className="flex-1 grid grid-cols-1 lg:grid-cols-[340px_1fr]">
 
-        {/* Left — stat cards */}
+        {/* ── Left column ── */}
         <div
-          className="p-6 flex flex-col gap-4"
+          className="p-5 flex flex-col gap-3 overflow-y-auto"
           style={{ borderRight: "1px solid var(--border)" }}
         >
+          {/* Stat cards */}
           {stats.map((s) => (
-            <div
-              key={s.sub}
-              className="rounded-xl px-5 py-4"
-              style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border)",
-              }}
-            >
-              <p className="section-eyebrow mb-2">{s.sub}</p>
-              <div className="flex items-center gap-2">
-                {s.dot && (
-                  <span
-                    className="w-2 h-2 rounded-full shrink-0"
-                    style={{ backgroundColor: "var(--accent-primary)" }}
-                  />
-                )}
-                <p className="text-2xl font-bold" style={{ color: "var(--text-primary)" }}>
+            <div key={s.sub} className="stat-card">
+              <p className="section-eyebrow" style={{ color: "var(--accent-primary)" }}>{s.sub}</p>
+              <div className="flex items-center gap-1.5 mt-1">
+                {s.dot && <span className="avail-dot" />}
+                <span className="text-xl font-bold" style={{ color: "var(--text-primary)" }}>
                   {s.value}
-                </p>
+                </span>
               </div>
-              <p className="text-xs mt-1" style={{ color: "var(--text-muted)" }}>
-                {s.label}
-              </p>
+              <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>{s.label}</p>
             </div>
           ))}
-        </div>
 
-        {/* Right — highlights */}
-        <div className="p-8 space-y-10 overflow-y-auto">
-
-          {/* Career highlights */}
-          <section>
-            <p className="section-eyebrow mb-4">Career Highlights</p>
-            {employerBrands.map((b) => (
-              <div key={b.name} className="flex items-start gap-4">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-bold shrink-0"
-                  style={{ backgroundColor: b.color + "22", color: b.color }}
-                >
-                  {b.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}
-                </div>
-                <div>
-                  <p className="font-semibold" style={{ color: "var(--text-primary)" }}>
-                    {b.name} · 10 years
-                  </p>
-                  <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-                    Engineering Manager · SIMULIA R&D · Delivered for Apple, Boeing, Red Bull Racing, Exxon Mobil
-                  </p>
-                </div>
-              </div>
-            ))}
-          </section>
-
-          <div className="divider" />
-
-          {/* Enterprise clients */}
-          <section>
-            <p className="section-eyebrow mb-4">Enterprise Clients Served</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {[...clientBrands, ...employerBrands,
-                { name: "Georgia Tech", color: "#B8860B", category: "Research & teaching", type: "education" }
-              ].map((b) => (
-                <div
-                  key={b.name}
-                  className="rounded-xl px-4 py-3 text-center"
-                  style={{
-                    background: "var(--surface-matte)",
-                    border: "1px solid var(--border-subtle)",
-                    backdropFilter: "blur(6px)",
-                  }}
-                >
-                  <p className="font-semibold text-sm" style={{ color: b.color }}>
-                    {b.name}
-                  </p>
-                  <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>
-                    {b.category}
-                  </p>
-                </div>
+          {/* Specialties */}
+          <div className="pt-1.5" style={{ borderTop: "1px solid var(--border)" }}>
+            <p className="section-eyebrow mb-1.5">Specialties</p>
+            <ul className="space-y-1">
+              {specialties.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="bullet-dot" />
+                  <span className="text-sm" style={{ color: "var(--text-secondary)" }}>{item}</span>
+                </li>
               ))}
-            </div>
-          </section>
-
-          <div className="divider" />
+            </ul>
+          </div>
 
           {/* Education */}
-          <section>
-            <p className="section-eyebrow mb-4">Education</p>
-            <div className="space-y-3">
-              {education.map((e) => {
-                const abbr =
-                  e.institution.includes("ISB") ? "ISB" :
-                  e.institution.includes("UT Austin") ? "UT" :
-                  e.institution.includes("Georgia") ? "GT" :
-                  e.institution.slice(0, 2).toUpperCase();
-                const eduBrand = educationBrands.find((b) =>
-                  b.name === "ISB" ? abbr === "ISB" : b.name.includes(abbr)
-                );
-                const color = eduBrand?.color ?? "var(--accent-primary)";
-                return (
-                  <div
-                    key={e.degree}
-                    className="flex items-center gap-4 pb-3"
-                    style={{ borderBottom: "1px solid var(--border)" }}
-                  >
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center text-xs font-bold shrink-0"
-                      style={{ backgroundColor: color + "22", color }}
-                    >
-                      {abbr}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm" style={{ color: "var(--text-primary)" }}>
-                        {e.degree}
-                      </p>
-                      <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-                        {e.institution} · {e.year}
-                        {e.honors ? ` · ${e.honors}` : ""}
-                        {e.gpa ? ` · GPA ${e.gpa}` : ""}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
+          <div className="pt-1.5" style={{ borderTop: "1px solid var(--border)" }}>
+            <p className="section-eyebrow mb-1.5">Education</p>
+            <ul className="space-y-1">
+              {educationItems.map((e) => (
+                <li key={e.label} className="flex items-start gap-2">
+                  <span
+                    className="mt-1 w-2 h-2 rounded-full shrink-0"
+                    style={{ backgroundColor: e.color }}
+                  />
+                  <span className="text-sm" style={{ color: "var(--text-secondary)" }}>{e.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* ── Right column ── */}
+        <div className="p-6 space-y-6 overflow-y-auto">
+
+          {/* Hero accent card */}
+          <div className="hero-accent-card">
+            <p
+              className="section-eyebrow mb-3"
+              style={{ color: "var(--accent-primary)" }}
+            >
+              {hero.eyebrow}
+            </p>
+            <h2
+              className="text-2xl font-bold leading-snug mb-3"
+              style={{ color: "var(--text-primary)" }}
+            >
+              {hero.headline}
+            </h2>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--text-secondary)" }}>
+              {hero.body}
+            </p>
+
+            {/* Feature mini-cards */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              {hero.features.map((f) => (
+                <div key={f.title} className="feature-card">
+                  <GridIcon />
+                  <p className="font-semibold text-sm mt-2 mb-0.5" style={{ color: "var(--text-primary)" }}>
+                    {f.title}
+                  </p>
+                  <p className="text-xs" style={{ color: "var(--text-muted)" }}>{f.subtext}</p>
+                </div>
+              ))}
             </div>
-          </section>
+          </div>
 
-          <div className="divider" />
-
-          {/* Competition signals */}
+          {/* Business problems */}
           <section>
-            <p className="section-eyebrow mb-4">Competition Wins & Signals</p>
-            <div className="space-y-3">
-              {signals.map((s) => (
-                <div key={s.label} className="flex items-center gap-3">
-                  <span className={s.type === "award" ? "badge-award" : "badge-competition"}>
-                    {s.label}
-                  </span>
-                  <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-                    {s.detail}
+            <p className="section-eyebrow mb-3">Business Problems I Solve</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {business_problems.map((bp) => (
+                <div key={bp.title} className="problem-card">
+                  <GridIcon />
+                  <p className="font-semibold text-sm mt-2 mb-1" style={{ color: "var(--text-primary)" }}>
+                    {bp.title}
+                  </p>
+                  <p className="text-xs italic" style={{ color: "var(--text-muted)" }}>
+                    &ldquo;{bp.subtext}&rdquo;
                   </p>
                 </div>
               ))}
             </div>
           </section>
+
+          {/* CTA card */}
+          <div className="cta-card">
+            <div>
+              <p className="font-semibold text-sm mb-0.5" style={{ color: "var(--text-primary)" }}>
+                {hero.cta.title}
+              </p>
+              <p className="text-xs" style={{ color: "var(--text-muted)" }}>{hero.cta.subtext}</p>
+            </div>
+            <a href={hero.cta.href} className="btn-ghost shrink-0">
+              {hero.cta.button}
+            </a>
+          </div>
 
         </div>
       </div>
     </section>
+  );
+}
+
+function GridIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent-primary)", opacity: 0.7 }}>
+      <rect x="3" y="3" width="7" height="7" rx="1" />
+      <rect x="14" y="3" width="7" height="7" rx="1" />
+      <rect x="3" y="14" width="7" height="7" rx="1" />
+      <rect x="14" y="14" width="7" height="7" rx="1" />
+    </svg>
   );
 }

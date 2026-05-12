@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import AboutMe from "@/components/AboutMe";
-import ChatWidget from "@/components/ChatWidget";
+// import ChatWidget from "@/components/ChatWidget";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <Services />
       <Projects />
       <AboutMe />
-      <ChatWidget />
+      {/* <ChatWidget /> */}
     </main>
   );
 }
