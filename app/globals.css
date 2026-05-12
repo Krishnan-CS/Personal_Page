@@ -1,3 +1,276 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ─────────────────────────────────────────────
+   Design tokens (CSS custom properties)
+   These are the single source of truth.
+   Tailwind tokens in tailwind.config.ts mirror
+   these for utility-class usage.
+───────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:      #111714;
+  --bg-secondary: #1A221D;
+  --bg-card:      #202922;
+  --bg-elevated:  #28332B;
+
+  /* Borders */
+  --border:        #354238;
+  --border-accent: rgba(176, 141, 87, 0.18);
+  --border-subtle: rgba(176, 141, 87, 0.08);
+
+  /* Primary accent — muted emerald */
+  --accent-primary:       #3E8B57;
+  --accent-primary-hover: #2f6e43;
+  --accent-primary-dim:   rgba(62, 139, 87, 0.12);
+
+  /* Secondary accent — bronze / muted gold */
+  --accent-secondary:       #d4a143;
+  --accent-secondary-hover: #b08057;
+  --accent-secondary-dim:   rgba(176, 141, 87, 0.10);
+
+  /* Text */
+  --text-primary:   #E8ECE8;
+  --text-secondary: #B7C0B7;
+  --text-muted:     #7E8A80;
+
+  /* Surfaces */
+  --surface-matte: rgba(32, 41, 34, 0.85);
+}
+
+/* ─────────────────────────────────────────────
+   Base reset & body
+───────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: "Inter", "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.65;
+    /* Subtle noise layer — sits on top of the bg color */
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  /* ── Section heading style ── */
+  .section-eyebrow {
+    font-size: 0.6875rem;       /* 11px */
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+  h3 { font-size: clamp(1rem, 2vw, 1.125rem); font-weight: 600; line-height: 1.35; }
+  p  { color: var(--text-secondary); }
+}
+
+/* ─────────────────────────────────────────────
+   Component layer — reusable primitives
+   Use these @apply blocks in JSX via className
+───────────────────────────────────────────── */
+@layer components {
+
+  /* Card — soft matte surface */
+  .card {
+    background: var(--surface-matte);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    border-color: var(--border-accent);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  /* Solid card variant (no blur, for non-overlapping contexts) */
+  .card-solid {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+    transition: border-color 0.2s;
+  }
+  .card-solid:hover {
+    border-color: var(--accent-secondary);
+  }
+
+  /* Contact row link hover */
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .contact-row:hover { color: var(--text-primary); }
+
+  /* GitHub pill on project cards */
+  .github-pill {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .github-pill:hover {
+    border-color: var(--accent-secondary);
+    color: var(--accent-secondary);
+  }
+
+  /* Primary button — muted emerald */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--accent-primary);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover {
+    background-color: var(--accent-primary-hover);
+    box-shadow: 0 0 0 3px rgba(61, 138, 69, 0.25);
+  }
+
+  /* Ghost button — bronze-tinted border */
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: transparent;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover {
+    border-color: var(--accent-secondary);
+    color: var(--text-primary);
+  }
+
+  /* Section divider — bronze tint */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-secondary-dim), transparent);
+  }
+
+  /* Active nav pill */
+  .nav-active {
+    background-color: var(--accent-primary);
+    color: #fff;
+  }
+
+  /* Badge — competition / achievement */
+  .badge-competition {
+    background-color: rgba(61, 138, 69, 0.15);
+    color: #7fba85;
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .badge-award {
+    background-color: rgba(176, 141, 87, 0.15);
+    color: var(--accent-secondary);
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .badge-info {
+    background-color: rgba(61, 138, 69, 0.10);
+    color: var(--text-secondary);
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  /* Skill pill — advanced */
+  .skill-advanced {
+    background-color: var(--accent-primary);
+    color: #fff;
+    padding: 0.2rem 0.65rem;
+    border-radius: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+  /* Skill pill — intermediate */
+  .skill-intermediate {
+    background-color: var(--bg-elevated);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.65rem;
+    border-radius: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+  /* Skill pill — beginner */
+  .skill-beginner {
+    background-color: var(--bg-card);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.65rem;
+    border-radius: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+
+  /* Timeline dot */
+  .dot-experience    { background-color: var(--accent-primary); }
+  .dot-education     { background-color: var(--accent-secondary); }
+  .dot-certification { background-color: #c9a84c; }
+}
+
+/* ─────────────────────────────────────────────
+   Scrollbar — subtle dark
+───────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--bg-base); }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ─────────────────────────────────────────────
+   Selection highlight
+───────────────────────────────────────────── */
+::selection {
+  background-color: var(--accent-primary-dim);
+  color: var(--text-primary);
+}

@@ -1,18 +1,18 @@
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
+import Services from "@/components/Services";
 import Projects from "@/components/Projects";
-import Timeline from "@/components/Timeline";
-import Contact from "@/components/Contact";
+import AboutMe from "@/components/AboutMe";
 import ChatWidget from "@/components/ChatWidget";
 
 export default function Home() {
   return (
     <main>
+      <Navbar />
       <Hero />
-      <Skills />
+      <Services />
       <Projects />
-      <Timeline />
-      <Contact />
+      <AboutMe />
       <ChatWidget />
     </main>
   );

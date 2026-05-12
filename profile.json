@@ -2,7 +2,7 @@
   "personal": {
     "name": "Krishnan CS",
     "email": "kchathadi@gmail.com",
-    "phone": "+91 8380074960",
+    "phone": "",
     "linkedin": "linkedin.com/in/krishnancs/",
     "github": "github.com/Krishnan-CS/",
     "location": "India"
@@ -16,6 +16,7 @@
 	],
 	
   "career": {
+  "title": "AI Strategy Consultant",
   "target_roles": ["Data Science Manager", "AI Product Manager", "AI Solutions Architect", "GenAI Business Development Manager", "AI Strategy Consultant", "ML Engineering Manager"],
   "pivot_context": "Transitioning from software engineering management to AI-driven strategy and business development",
   "open_to_relocation": true
@@ -279,6 +280,54 @@
 	  "url": "https://github.com/Krishnan-CS/Agentic_Resume_Screener"
 	}
   ],
+
+  "freelance": {
+    "tagline": "AI strategy and engineering, from first principles to production",
+    "availability": "open",
+    "availability_note": "Freelance · Contract · Advisory",
+    "contact_preference": "email",
+    "services": [
+      {
+        "title": "AI strategy & roadmapping",
+        "description": "Translate business problems into AI project scopes, define KPIs, and build implementation roadmaps that non-technical stakeholders can act on.",
+        "icon": "ti-route"
+      },
+      {
+        "title": "ML model development",
+        "description": "End-to-end model building — from EDA and feature engineering through training, evaluation, and deployment-ready packaging.",
+        "icon": "ti-cpu"
+      },
+      {
+        "title": "GenAI & RAG systems",
+        "description": "LLM-powered applications using RAG, knowledge graphs, and agentic workflows. Reduced hallucinations, domain-specific grounding.",
+        "icon": "ti-brain"
+      },
+      {
+        "title": "MLOps & data pipelines",
+        "description": "Production ML governance: experiment tracking, model registry, drift monitoring, CI/CD pipelines, and automated retraining.",
+        "icon": "ti-settings-automation"
+      }
+    ]
+  },
+
+  "highlights": {
+    "brands": [
+      { "name": "Apple", "color": "#555555", "category": "Product strategy", "type": "client" },
+      { "name": "Boeing", "color": "#1B4F9B", "category": "Data engineering", "type": "client" },
+      { "name": "Red Bull Racing", "color": "#1E3A8A", "category": "Data architecture", "type": "client" },
+      { "name": "Exxon Mobil", "color": "#CC0000", "category": "Simulation & analytics", "type": "client" },
+      { "name": "Dassault Systèmes", "color": "#0D47A1", "category": "R&D · 10 yrs", "type": "employer" },
+      { "name": "Georgia Tech", "color": "#B8860B", "category": "Research & teaching", "type": "education" },
+      { "name": "ISB", "color": "#854F0B", "category": "Business analytics", "type": "education" },
+      { "name": "UT Austin", "color": "#185FA5", "category": "Data science", "type": "education" }
+    ],
+    "signals": [
+      { "label": "Kaggle #1", "detail": "Shopping cart recommendation · 1st of 20 teams", "type": "competition" },
+      { "label": "Hackathon 3rd", "detail": "Fraudulent website detection · National level", "type": "competition" },
+      { "label": "Hackathon winner", "detail": "Bullet train passenger experience · 95.7% accuracy", "type": "competition" },
+      { "label": "Award", "detail": "Multiple Dassault Systèmes awards for technical brilliance", "type": "award" }
+    ]
+  },
 
   "chatbot_system_prompt": "You are a personal assistant for Krishnan CS. Answer questions about his experience, skills, projects, education, and career goals based only on the profile data provided. Be concise and professional. If someone asks about anything unrelated to Krishnan — such as general coding help, trivia, or other topics — politely decline and redirect the conversation back to questions about him.",
 
