@@ -68,7 +68,7 @@ export default function Hero() {
               {specialties.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="bullet-dot" />
-                  <span className="text-sm" style={{ color: "var(--text-secondary)" }}>{item}</span>
+                  <span className="text-sm" style={{ color: "var(--text-primary)" }}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -84,7 +84,7 @@ export default function Hero() {
                     className="mt-1 w-2 h-2 rounded-full shrink-0"
                     style={{ backgroundColor: e.color }}
                   />
-                  <span className="text-sm" style={{ color: "var(--text-secondary)" }}>{e.label}</span>
+                  <span className="text-sm" style={{ color: "var(--text-primary)" }}>{e.label}</span>
                 </li>
               ))}
             </ul>
@@ -126,7 +126,7 @@ export default function Hero() {
           {/* Business problems */}
           <section className="mt-2">
             <p className="section-eyebrow mb-3">Business Problems I Solve</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {business_problems.map((bp, i) => (
                 <div key={bp.title} className="problem-card">
                   <ProblemIcon index={i} />
