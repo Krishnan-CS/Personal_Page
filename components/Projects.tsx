@@ -46,7 +46,7 @@ export default function Projects() {
               {/* Highlights */}
               <ul className="space-y-1">
                 {project.highlights.map((h, i) => (
-                  <li key={i} className="text-xs flex gap-2" style={{ color: "var(--text-secondary)" }}>
+                  <li key={i} className="card-subtext flex gap-2" style={{ color: "var(--text-secondary)" }}>
                     <span className="shrink-0 mt-0.5" style={{ color: "var(--accent-primary)" }}>▸</span>
                     <span>{h}</span>
                   </li>

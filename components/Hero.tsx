@@ -1,3 +1,4 @@
+import React from "react";
 import profile from "@/profile.json";
 
 type HeroSection = {
@@ -9,7 +10,7 @@ type HeroSection = {
 };
 
 export default function Hero() {
-  const { freelance, specialties, business_problems } = profile as
+  const { specialties, business_problems } = profile as
     typeof profile & {
       specialties: string[];
       business_problems: { title: string; subtext: string }[];
@@ -21,27 +22,16 @@ export default function Hero() {
     { label: "Georgia Tech - Aerospace Engineering", color: "#B8860B" },
   ];
 
-  const stats = [
+  const stats: { sub: string; value: string; label: React.ReactNode }[] = [
     {
       sub: "Experience",
       value: "15+",
-      label: "years end-to-end delivery",
-    },
-    {
-      sub: "Enterprise Clients",
-      value: "10+",
-      label: "Apple · Boeing · Red Bull Racing",
+      label: <><span>Dassault Systemes</span><br /><span>Cognizant Technology Solutions</span></>,
     },
     {
       sub: "AI Projects Delivered",
       value: "10+",
-      label: "Document Intelligence · Power Trading Forecasts · Shopping Cart Recommendations",
-    },
-    {
-      sub: "Availability",
-      value: freelance.availability === "open" ? "Open" : "Unavailable",
-      label: freelance.availability_note,
-      dot: freelance.availability === "open",
+      label: <><span>Document Intelligence</span><br /><span>Power Trading Forecasts</span><br /><span>Shopping Cart Recommendations</span></>,
     },
   ];
 
@@ -55,7 +45,7 @@ export default function Hero() {
 
         {/* ── Left column ── */}
         <div
-          className="p-5 flex flex-col gap-3 overflow-y-auto"
+          className="p-6 flex flex-col gap-5 overflow-y-auto"
           style={{ borderRight: "1px solid var(--border)" }}
         >
           {/* Stat cards */}
@@ -63,19 +53,18 @@ export default function Hero() {
             <div key={s.sub} className="stat-card">
               <p className="section-eyebrow" style={{ color: "var(--accent-primary)" }}>{s.sub}</p>
               <div className="flex items-center gap-1.5 mt-1">
-                {s.dot && <span className="avail-dot" />}
-                <span className="text-xl font-bold" style={{ color: "var(--text-primary)" }}>
+                <span className="font-bold" style={{ fontSize: "1.375rem", color: "var(--text-primary)" }}>
                   {s.value}
                 </span>
               </div>
-              <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>{s.label}</p>
+              <p className="card-subtext mt-1" style={{ color: "var(--accent-secondary)", opacity: 0.75 }}>{s.label}</p>
             </div>
           ))}
 
           {/* Specialties */}
-          <div className="pt-1.5" style={{ borderTop: "1px solid var(--border)" }}>
-            <p className="section-eyebrow mb-1.5">Specialties</p>
-            <ul className="space-y-1">
+          <div className="pt-2" style={{ borderTop: "1px solid var(--border)" }}>
+            <p className="section-eyebrow mb-2">Specialties</p>
+            <ul className="space-y-2">
               {specialties.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <span className="bullet-dot" />
@@ -86,9 +75,9 @@ export default function Hero() {
           </div>
 
           {/* Education */}
-          <div className="pt-1.5" style={{ borderTop: "1px solid var(--border)" }}>
-            <p className="section-eyebrow mb-1.5">Education</p>
-            <ul className="space-y-1">
+          <div className="pt-2" style={{ borderTop: "1px solid var(--border)" }}>
+            <p className="section-eyebrow mb-2">Education</p>
+            <ul className="space-y-2">
               {educationItems.map((e) => (
                 <li key={e.label} className="flex items-start gap-2">
                   <span
@@ -122,32 +111,27 @@ export default function Hero() {
             <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--text-secondary)" }}>
               {hero.body}
             </p>
-
-            {/* Feature mini-cards */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              {hero.features.map((f) => (
-                <div key={f.title} className="feature-card">
-                  <GridIcon />
-                  <p className="font-semibold text-sm mt-2 mb-0.5" style={{ color: "var(--text-primary)" }}>
-                    {f.title}
-                  </p>
-                  <p className="text-xs" style={{ color: "var(--text-muted)" }}>{f.subtext}</p>
-                </div>
-              ))}
+            <div className="flex items-center justify-between gap-4 pt-2" style={{ borderTop: "1px solid var(--border)" }}>
+              <p className="font-semibold text-sm" style={{ color: "var(--text-primary)" }}>
+                {hero.cta.title}
+              </p>
+              <a href={hero.cta.href} className="btn-ghost shrink-0">
+                {hero.cta.button} <span aria-hidden>→</span>
+              </a>
             </div>
           </div>
 
           {/* Business problems */}
-          <section>
+          <section className="mt-2">
             <p className="section-eyebrow mb-3">Business Problems I Solve</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {business_problems.map((bp) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl">
+              {business_problems.map((bp, i) => (
                 <div key={bp.title} className="problem-card">
-                  <GridIcon />
-                  <p className="font-semibold text-sm mt-2 mb-1" style={{ color: "var(--text-primary)" }}>
+                  <ProblemIcon index={i} />
+                  <p className="font-semibold text-base mt-2 mb-1" style={{ color: "var(--text-primary)" }}>
                     {bp.title}
                   </p>
-                  <p className="text-xs italic" style={{ color: "var(--text-muted)" }}>
+                  <p className="card-subtext" style={{ color: "var(--text-muted)" }}>
                     &ldquo;{bp.subtext}&rdquo;
                   </p>
                 </div>
@@ -155,32 +139,45 @@ export default function Hero() {
             </div>
           </section>
 
-          {/* CTA card */}
-          <div className="cta-card">
-            <div>
-              <p className="font-semibold text-sm mb-0.5" style={{ color: "var(--text-primary)" }}>
-                {hero.cta.title}
-              </p>
-              <p className="text-xs" style={{ color: "var(--text-muted)" }}>{hero.cta.subtext}</p>
-            </div>
-            <a href={hero.cta.href} className="btn-ghost shrink-0">
-              {hero.cta.button}
-            </a>
-          </div>
-
         </div>
       </div>
     </section>
   );
 }
 
-function GridIcon() {
+const iconStyle: React.CSSProperties = { color: "var(--accent-primary)", opacity: 0.8 };
+
+function ProblemIcon({ index }: { index: number }) {
+  const props = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, style: iconStyle };
+  if (index === 0) return (
+    // Forecasting & Optimization — trend line with upward arrow
+    <svg {...props}>
+      <polyline points="2 17 8 11 13 14 22 5" />
+      <polyline points="16 5 22 5 22 11" />
+    </svg>
+  );
+  if (index === 1) return (
+    // Document Intelligence — document with magnifier
+    <svg {...props}>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+      <circle cx="10" cy="15" r="2" />
+      <line x1="12" y1="17" x2="14.5" y2="19.5" />
+    </svg>
+  );
+  if (index === 2) return (
+    // Recommendation & Personalisation — user with sparkle
+    <svg {...props}>
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+      <path d="M18 3l.5 1.5L20 5l-1.5.5L18 7l-.5-1.5L16 5l1.5-.5z" />
+    </svg>
+  );
+  // index === 3: AI Risk & Explainability — shield with check
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent-primary)", opacity: 0.7 }}>
-      <rect x="3" y="3" width="7" height="7" rx="1" />
-      <rect x="14" y="3" width="7" height="7" rx="1" />
-      <rect x="3" y="14" width="7" height="7" rx="1" />
-      <rect x="14" y="14" width="7" height="7" rx="1" />
+    <svg {...props}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <polyline points="9 12 11 14 15 10" />
     </svg>
   );
 }

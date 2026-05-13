@@ -169,7 +169,7 @@
     gap: 0.5rem;
     padding: 0.625rem 1.25rem;
     background-color: transparent;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-size: 0.875rem;
     font-weight: 500;
     border-radius: 0.75rem;
@@ -319,6 +319,12 @@
     background-color: var(--accent-primary);
     flex-shrink: 0;
     margin-top: 0.4rem;
+  }
+
+  /* Subtext inside cards — slightly above text-xs */
+  .card-subtext {
+    font-size: 0.8rem;
+    line-height: 1.55;
   }
 
   /* Availability pulse dot */

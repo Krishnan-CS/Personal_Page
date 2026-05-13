@@ -166,8 +166,8 @@ function TimelinePanel() {
                   <div>
                     <h3 style={{ color: "var(--text-primary)" }}>{item.degree}</h3>
                     <p className="text-sm" style={{ color: LABEL_COLOR.education }}>{item.institution}</p>
-                    {item.gpa    && <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>GPA: {item.gpa}</p>}
-                    {item.honors && <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>{item.honors}</p>}
+                    {item.gpa    && <p className="card-subtext mt-0.5" style={{ color: "var(--text-muted)" }}>GPA: {item.gpa}</p>}
+                    {item.honors && <p className="card-subtext mt-0.5" style={{ color: "var(--text-muted)" }}>{item.honors}</p>}
                   </div>
                   <span className="text-xs shrink-0" style={{ color: "var(--text-muted)" }}>{item.year}</span>
                 </div>
