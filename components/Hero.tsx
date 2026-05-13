@@ -121,6 +121,8 @@ export default function Hero() {
             </div>
           </div>
 
+          <hr style={{ borderColor: "var(--border)" }} />
+
           {/* Business problems */}
           <section className="mt-2">
             <p className="section-eyebrow mb-3">Business Problems I Solve</p>
