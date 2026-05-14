@@ -40,7 +40,7 @@
   "hero_section": {
     "eyebrow": "AI STRATEGY CONSULTANT · TRICHY, INDIA",
     "headline": "Helping businesses deploy AI effectively, securely, and at scale",
-    "body": "15+ years building engineering systems for enterprise environments, including aerospace, automotive, industrial, and IT domains. Now focused on AI product development, GenAI systems, and practical AI adoption strategies.",
+    "body": "15+ years building engineering systems for enterprise environments, including aerospace, automotive, industrial, and IT domains. Now focused on AI product development, GenAI systems, and practical AI adoption.",
     "features": [
       { "title": "Problem Definition",   "subtext": "Translating ambiguous business requirements into cost-effective AI solutions." },
       { "title": "Production AI Delivery",  "subtext": "From experimentation and modeling to MLOps and deployment." }
@@ -63,11 +63,11 @@
       "subtext": "How do we extract reliable insights from a large collection of documents?"
     },
     {
-      "title": "Recommendation and personalisation",
+      "title": "Personalized Recommendations",
       "subtext": "What products, actions or content is most relevant to the user right now?"
     },
     {
-      "title": "AI risk and explainability",
+      "title": "AI Risk Mitigation",
       "subtext": "Can we trust this model's recommendations in high-stakes scenarios?"
     }
   ],

@@ -87,10 +87,10 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-8">
         {/* Name + title */}
         <div className="flex flex-col justify-center shrink-0">
-          <span className="font-medium leading-tight" style={{ fontSize: "15px", color: "var(--text-primary)" }}>
+          <span className="leading-tight" style={{ fontSize: "15px", fontWeight: 750, color: "var(--text-primary)" }}>
             Krishnan CS
           </span>
-          <span className="leading-tight" style={{ fontSize: "12px", color: "var(--accent-primary)" }}>
+          <span className="leading-tight" style={{ fontSize: "12px", fontWeight: 750, color: "var(--accent-primary)" }}>
             AI Strategy Consultant
           </span>
         </div>

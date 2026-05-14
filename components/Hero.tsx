@@ -17,9 +17,9 @@ export default function Hero() {
     };
   const hero = (profile as unknown as { hero_section: HeroSection }).hero_section;
   const educationItems = [
-    { label: "ISB - Business Analytics",       color: "#854F0B" },
-    { label: "UT Austin - Data Science",       color: "#185FA5" },
-    { label: "Georgia Tech - Aerospace Engineering", color: "#B8860B" },
+    "ISB - Business Analytics",
+    "UT Austin - Data Science",
+    "Georgia Tech - Aerospace Engineering",
   ];
 
   const stats: { sub: string; value: string; label: React.ReactNode }[] = [
@@ -31,7 +31,7 @@ export default function Hero() {
     {
       sub: "AI Projects Delivered",
       value: "10+",
-      label: <><span>Document Intelligence</span><br /><span>Power Trading Forecasts</span><br /><span>Shopping Cart Recommendations</span></>,
+      label: <><span>Document Intelligence Platform</span><br /><span>Energy Market Forecasting Portal</span><br /><span>Shopping Cart Recommendation System</span></>,
     },
   ];
 
@@ -78,13 +78,10 @@ export default function Hero() {
           <div className="pt-2" style={{ borderTop: "1px solid var(--border)" }}>
             <p className="section-eyebrow mb-2">Education</p>
             <ul className="space-y-2">
-              {educationItems.map((e) => (
-                <li key={e.label} className="flex items-start gap-2">
-                  <span
-                    className="mt-1 w-2 h-2 rounded-full shrink-0"
-                    style={{ backgroundColor: e.color }}
-                  />
-                  <span className="text-sm" style={{ color: "var(--text-primary)" }}>{e.label}</span>
+              {educationItems.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="bullet-dot" />
+                  <span className="text-sm" style={{ color: "var(--text-primary)" }}>{item}</span>
                 </li>
               ))}
             </ul>
